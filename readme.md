@@ -31,7 +31,7 @@ curl https://raw.githubusercontent.com/gmanka-containers/fedora-steambox/refs/he
 - based on fedora
 - gamescope and mangohud preinstalled, unlike on ublue's steambox
 - steam overlay is working, thanks to gamescope
-- wripper script fixes launching gamescope in toolbox
+- wrapper script fixes launching gamescope in toolbox
 - wrapper script forces steam to reuse flatpak data path in .var, so you don't relogin and don't re-download games
 - proton ge preisntalled and listed in steam compatibility tools list
 - toolbox supports proprietary nvidia drivers integration out of the box
