@@ -36,6 +36,17 @@ curl https://raw.githubusercontent.com/gmanka-containers/fedora-steambox/refs/he
 - proton ge preisntalled and listed in steam compatibility tools list
 - toolbox supports proprietary nvidia drivers integration out of the box
 
+### how to stop using flatpak data path
+
+if you don't want store steam data in .var,
+then open steam-wrapper in text editor:
+
+```bash
+toolbox run --container=fedora-steambox sudoedit /usr/local/bin/steam-wrapper
+```
+
+and remove `export XDG_DATA_HOME=` line
+
 ### installed packages list
 
 - `steam` - no explanation required i guess
