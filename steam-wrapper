@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+set -uexo pipefail
+
+resolution=$(xrandr | awk '/\*/ {print $1; exit}')
+width=${resolution%x*}
+height=${resolution#*x}
+
+# share same data dir with flatpaked steam
+export XDG_DATA_HOME=$HOME/.var/app/com.valvesoftware.Steam/.local/share
+
+# --tmpfs $HOME/.steam   - ignore previously configured data dir and force $XDG_DATA_HOME path
+# --tmpfs /tmp/.X11-unix - required for gamescope to work inside container
+exec bwrap \
+  --dev-bind / / \
+  --tmpfs $HOME/.steam \
+  --tmpfs /tmp/.X11-unix \
+  /usr/bin/gamescope \
+  --steam \
+  --fullscreen \
+  --output-width=$width \
+  --output-height=$height \
+  -- \
+  /usr/bin/steam
