@@ -17,6 +17,7 @@ exec bwrap \
   --tmpfs /tmp/.X11-unix \
   /usr/bin/gamescope \
   --steam \
+  --mangoapp \
   --fullscreen \
   --output-width=$width \
   --output-height=$height \
