@@ -7,6 +7,9 @@ export refresh=$(xrandr | sed -En 's/.* ([0-9.]+)\*.*/\1/p')
 export width=${resolution%x*}
 export height=${resolution#*x}
 
+# reads mangoapp wrapper script from this dir
+export PATH=/usr/local/libexec/gamescope:$PATH
+
 # share same data dir with flatpaked steam
 export XDG_DATA_HOME=$HOME/.var/app/com.valvesoftware.Steam/.local/share
 
