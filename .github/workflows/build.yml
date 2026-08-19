@@ -12,16 +12,24 @@ jobs:
       packages: write
     steps:
       - uses: actions/checkout@v7
+      - uses: redhat-actions/podman-login@v1
+        with:
+          registry: quay.io
+          username: gmankab
+          password: ${{ secrets.QUAY_TOKEN }}
       - uses: redhat-actions/buildah-build@v3
         with:
           tags: quay.io/gmanka/fedora-steambox:latest
           containerfiles: |
             Containerfile
+          layers: true
+          squash: false
+          extra-args: |
+            --cache-from=quay.io/gmanka/fedora-steambox
+            --cache-to=quay.io/gmanka/fedora-steambox
+            --cache-ttl=23h
       - name: quay.io
         uses: redhat-actions/push-to-registry@v3
         with:
           tags: quay.io/gmanka/fedora-steambox:latest
           registry: quay.io/gmanka
-          username: gmankab
-          password: ${{ secrets.QUAY_TOKEN }}
-
