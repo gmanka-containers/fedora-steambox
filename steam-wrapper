@@ -2,9 +2,10 @@
 
 set -uexo pipefail
 
-resolution=$(xrandr | awk '/\*/ {print $1; exit}')
-width=${resolution%x*}
-height=${resolution#*x}
+export resolution=$(xrandr | awk '/\*/ {print $1; exit}')
+export refresh=$(xrandr | sed -En 's/.* ([0-9.]+)\*.*/\1/p')
+export width=${resolution%x*}
+export height=${resolution#*x}
 
 # share same data dir with flatpaked steam
 export XDG_DATA_HOME=$HOME/.var/app/com.valvesoftware.Steam/.local/share
@@ -21,5 +22,6 @@ exec bwrap \
   --fullscreen \
   --output-width=$width \
   --output-height=$height \
+  --nested-refresh=$refresh \
   -- \
   /usr/bin/steam
