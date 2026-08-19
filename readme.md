@@ -47,6 +47,12 @@ toolbox run --container=fedora-steambox sudoedit /usr/local/bin/steam-wrapper
 
 and remove `export XDG_DATA_HOME=` line
 
+### enable colemak layout in gamescope
+
+```bash
+toolbox run -c=fedora-steambox env XKB_DEFAULT_LAYOUT=us XKB_DEFAULT_VARIANT=colemak steam-wrapper
+```
+
 ### installed packages list
 
 - `steam` - no explanation required i guess
