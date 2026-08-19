@@ -8,5 +8,6 @@ RUN --mount=type=cache,target=/var/cache \
     dnf config-manager setopt fedora-cisco-openh264.enabled=1 && \
     dnf -y install steam gamescope mangohud pactl lspci lsb_release xrandr
 COPY steam-wrapper /usr/local/bin/steam-wrapper
+COPY mangoapp /usr/local/libexec/gamescope/mangoapp
 COPY --from=downloader /proton-ge /usr/share/steam/compatibilitytools.d/proton-ge
 ENV STEAM_EXTRA_COMPAT_TOOLS_PATHS=/usr/share/steam/compatibilitytools.d
