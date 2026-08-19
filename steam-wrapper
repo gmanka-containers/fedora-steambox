@@ -17,6 +17,8 @@ exec bwrap \
   --tmpfs $HOME/.steam \
   --tmpfs /tmp/.X11-unix \
   /usr/bin/gamescope \
+  --backend=wayland \
+  --expose-wayland \
   --steam \
   --mangoapp \
   --fullscreen \
