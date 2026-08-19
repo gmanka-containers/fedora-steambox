@@ -29,12 +29,19 @@ curl https://raw.githubusercontent.com/gmanka-containers/fedora-steambox/refs/he
 ### features
 
 - based on fedora
-- gamescope and mangohud preinstalled, unlike on ublue's steambox
-- steam overlay is working, thanks to gamescope
-- wrapper script fixes launching gamescope in toolbox
-- wrapper script forces steam to reuse flatpak data path in .var, so you don't relogin and don't re-download games
 - proton ge preisntalled and listed in steam compatibility tools list
 - toolbox supports proprietary nvidia drivers integration out of the box
+- gamescope and mangohud preinstalled, unlike on ublue's steambox
+- steam overlay is working, thanks to gamescope
+
+### steam wapper script
+
+- fixes launching gamescope in toolbox by mounting tmpfs to /tmp/.X11-unix
+- forces steam to reuse flatpak data path in .var, so you don't relogin and don't re-download games
+
+### mangoapp wrapper script
+
+- fixes gamescope bug [#2334](https://github.com/ValveSoftware/gamescope/issues/2334)
 
 ### how to stop using flatpak data path
 
