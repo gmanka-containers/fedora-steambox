@@ -17,6 +17,8 @@ jobs:
           tags: quay.io/gmanka/fedora-steambox:latest
           containerfiles: |
             Containerfile
+          layers: true
+          squash: false
       - name: quay.io
         uses: redhat-actions/push-to-registry@v3
         with:
