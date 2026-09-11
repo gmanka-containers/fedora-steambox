@@ -10,4 +10,5 @@ RUN --mount=type=cache,target=/var/cache \
 COPY --from=downloader /proton-ge /opt/steam/compatibilitytools.d/proton-ge
 ENV STEAM_EXTRA_COMPAT_TOOLS_PATHS=/opt/steam/compatibilitytools.d
 COPY steam-wrapper /usr/local/bin/steam-wrapper
+COPY steamos-session-select /usr/local/bin/steamos-session-select
 COPY mangoapp /usr/local/libexec/gamescope/mangoapp
