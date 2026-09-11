@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=gamescope
+Exec=toolbox run -c=fedora-steambox bwrap --dev-bind / / --tmpfs /tmp/.X11-unix gamescope --steam -- steam -steamos3
+Type=Application
+DesktopNames=gamescope

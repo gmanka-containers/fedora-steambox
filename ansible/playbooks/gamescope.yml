@@ -1,0 +1,9 @@
+- hosts: all
+  become: true
+  gather_facts: false
+  vars:
+    repo: '{{ playbook_dir | dirname | dirname }}'
+  tasks:
+    - copy:
+        src: '{{ repo }}/wayland-sessions'
+        dest: /usr/local/share/wayland-sessions/
