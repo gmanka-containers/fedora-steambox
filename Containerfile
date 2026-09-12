@@ -3,6 +3,7 @@ RUN mkdir /proton-ge
 RUN gh release download --repo=GloriousEggroll/proton-ge-custom --pattern='GE-Proton*-x86_64.tar.gz' --output - | tar -xz --directory=/proton-ge --strip-components=1
 
 FROM quay.io/fedora/fedora-toolbox:44
+COPY gmanka.repo /etc/yum.repos.d/gmanka.repo
 RUN --mount=type=cache,target=/var/cache \
     dnf config-manager setopt fedora-cisco-openh264.enabled=1 && \
     dnf -y install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y && \
