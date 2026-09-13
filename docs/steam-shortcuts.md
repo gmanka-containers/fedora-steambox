@@ -20,7 +20,7 @@ env appname=firefox executable=steambox-host-exec options='flatpak run --nosocke
 ### add niri
 
 ```bash
-env appname=niri options=niri uv run misc/steam-shortcut.py
+env appname=niri executable=steambox-host-exec options=niri uv run misc/steam-shortcut.py
 ```
 
 ### add gnome
