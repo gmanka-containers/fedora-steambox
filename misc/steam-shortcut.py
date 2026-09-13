@@ -15,7 +15,7 @@ import vdf
 
 entry = {
     'appid': random.randrange(-2**31, 0),
-    'Exe': 'steambox-host-exec',
+    'Exe': os.environ['executable'],
     'AppName': os.environ['appname'],
     'LaunchOptions': os.environ['options'],
 }
