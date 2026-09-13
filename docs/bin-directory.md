@@ -25,3 +25,7 @@ triggered when you press `switch to desktop` in gamescope session
 ### steambox-host-exec
 
 allows spawn host apps in gamescope
+
+### steambox-toolbox-exec
+
+allows spawning toolbox apps in gamescope. takes the container name followed by the command.
