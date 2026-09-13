@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+set -uexo pipefail
+
+# share same data dir with flatpaked steam
+export XDG_DATA_HOME=$HOME/.var/app/com.valvesoftware.Steam/.local/share
+
+# --tmpfs $HOME/.steam   - ignore previously configured data dir and force $XDG_DATA_HOME path
+# --tmpfs /tmp/.X11-unix - required for gamescope to work inside container
+exec bwrap \
+  --dev-bind / / \
+  --tmpfs $HOME/.steam \
+  --tmpfs /tmp/.X11-unix \
+  /usr/bin/gamescope \
+  --expose-wayland \
+  --steam \
+  --mangoapp \
+  -- \
+  /usr/bin/steam \
+  -steamos3

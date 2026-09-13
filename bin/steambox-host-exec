@@ -1,0 +1,6 @@
+#!/bin/sh
+
+exec host-spawn -env WAYLAND_DISPLAY,DISPLAY \
+    systemd-run --user --scope -u "app-steam-app$SteamAppId-$$" \
+    bwrap --dev-bind / / --tmpfs "$XDG_RUNTIME_DIR/systemd" \
+    "$@"
