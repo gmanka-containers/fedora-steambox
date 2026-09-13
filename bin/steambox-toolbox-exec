@@ -1,0 +1,9 @@
+#!/bin/sh
+
+container=$1
+shift
+
+exec host-spawn -env WAYLAND_DISPLAY,DISPLAY \
+    toolbox run --container="$container" \
+    systemd-run --user --scope -u "app-steam-app$SteamAppId-$$" \
+    "$@"
