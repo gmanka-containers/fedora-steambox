@@ -1,0 +1,15 @@
+- hosts: all
+  gather_facts: true
+  vars:
+    repo: '{{ playbook_dir | dirname | dirname }}'
+    home: '{{ ansible_facts["user_dir"] }}'
+  tasks:
+    - copy:
+        src: '{{ item.src }}'
+        dest: '{{ item.dest }}'
+      loop:
+        - src: '{{ repo }}/applications/'
+          dest: '{{ home }}/.local/share/applications/'
+        - src: '{{ repo }}/wayland-sessions/'
+          dest: /usr/local/share/wayland-sessions/
+      become: true
