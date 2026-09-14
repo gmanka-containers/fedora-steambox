@@ -12,7 +12,8 @@ and remove the `export XDG_DATA_HOME=` line from both scripts
 ### enable colemak layout in gamescope
 
 ```bash
-toolbox run -c=fedora-steambox env XKB_DEFAULT_LAYOUT=us XKB_DEFAULT_VARIANT=colemak gamescope-nested
+podman stop fedora-steambox
+podman update --env=XKB_DEFAULT_LAYOUT=us --env=XKB_DEFAULT_VARIANT=colemak fedora-steambox
 ```
 
 ### steam overlay broken on steam without gamescope
