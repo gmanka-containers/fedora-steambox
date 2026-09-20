@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+exec steambox-flatpak x11 --unset-env=G_RESOURCE_OVERLAYS app.devsuite.Ptyxis -s "$@"

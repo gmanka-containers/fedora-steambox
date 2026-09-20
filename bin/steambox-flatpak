@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+set -uexo pipefail
+
+backend=$1
+shift
+case $backend in
+    wayland) set -- --socket=wayland --nosocket=x11 --nosocket=fallback-x11 "$@" ;;
+    x11) set -- --nosocket=wayland --nosocket=fallback-x11 --socket=x11 "$@" ;;
+    *) exit 2 ;;
+esac
+exec steambox-host-exec flatpak run "$@"

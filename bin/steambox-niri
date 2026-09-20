@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+exec steambox-host-exec env -u WAYLAND_DISPLAY -u WAYLAND_SOCKET WINIT_UNIX_BACKEND=x11 niri "$@"

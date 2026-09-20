@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+exec steambox-toolbox-exec silverblue steambox-desktop-session wayland GNOME gnome-shell --wayland --devkit "$@"

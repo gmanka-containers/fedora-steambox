@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+timeout 15 xdotool search --sync --onlyvisible --class ^firefox$ windowsize --sync %@ $(xdotool getdisplaygeometry) &
+exec steambox-flatpak x11 org.mozilla.firefox --no-remote "$@"
