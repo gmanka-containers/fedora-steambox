@@ -1,0 +1,3 @@
+- no llm written docs allowed in docs/ dir, llm should write docs to some separate dir which later will be rewritten by human, this helps to prevent accidental push of llm written docs to public repo
+- always search internet for docs related to task before start working
+- follow yagni principles, less code is better
