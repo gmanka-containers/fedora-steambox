@@ -1,3 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
+
 unset WAYLAND_DISPLAY
 exec /usr/bin/mangoapp "$@"

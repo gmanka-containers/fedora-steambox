@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 exec host-spawn -env WAYLAND_DISPLAY,DISPLAY \
     systemd-run --user --scope -u "app-steam-app$SteamAppId-$$" \

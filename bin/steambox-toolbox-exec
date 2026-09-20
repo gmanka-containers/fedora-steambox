@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 container=$1
 shift
