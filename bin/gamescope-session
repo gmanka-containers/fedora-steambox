@@ -12,6 +12,7 @@ exec bwrap \
   --tmpfs $HOME/.steam \
   --tmpfs /tmp/.X11-unix \
   /usr/bin/gamescope \
+  --backend=drm \
   --expose-wayland \
   --steam \
   --mangoapp \
