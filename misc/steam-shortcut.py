@@ -17,7 +17,7 @@ entry = {
     'appid': random.randrange(-2**31, 0),
     'Exe': os.environ['executable'],
     'AppName': os.environ['appname'],
-    'LaunchOptions': os.environ['options'],
+    'LaunchOptions': os.environ.get('options', ''),
 }
 userdata = pathlib.Path.home() / '.var/app/com.valvesoftware.Steam/.local/share/Steam/userdata'
 for account in userdata.iterdir():
