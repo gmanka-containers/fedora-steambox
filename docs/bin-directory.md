@@ -28,4 +28,4 @@ allows spawn host apps in gamescope
 
 ### steambox-toolbox-exec
 
-allows spawning toolbox apps in gamescope. takes the container name followed by the command.
+allows spawning toolbox apps in gamescope, takes the container name followed by the command
