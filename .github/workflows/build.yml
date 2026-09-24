@@ -16,7 +16,7 @@ jobs:
       packages: write
     steps:
       - uses: actions/checkout@v7
-      - uses: redhat-actions/podman-login@v1
+      - uses: redhat-actions/podman-login@v2
         with:
           registry: quay.io
           username: gmankab
